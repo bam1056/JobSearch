@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   componentWillMount () {
-    window.fetch('http://service.dice.com/api/rest/jobsearch/v1/simple.json?text=javascript&city=Tampa,+FL&pgcnt=50')
+    window.fetch('http://service.dice.com/api/rest/jobsearch/v1/simple.json?text=javascript&city=Tampa,+FL&pgcnt=150')
     .then(res => res.json())
     .then(json => this.setState({jobs: json.resultItemList}))
   }
@@ -49,7 +49,7 @@ class App extends Component {
         <li>{job.company}</li>
         <li>{job.jobTitle}</li>
         <li>{job.location}</li>
-        <li><a style={styles.apply} href={job.detailUrl} target='_blank'>Apply</a><a style={styles.apply} href='mailto:antoinette.warren@gmail.com'>Email Toni</a></li>
+        <li><a style={styles.apply} href={job.detailUrl} target='_blank'>Apply</a><a style={styles.apply} href={`mailto:antoinette.warren@gmail.com?subject=New%20Job&body=${job.detailUrl}`}>Email Toni</a></li>
       </ul>
     })
     return <div>
