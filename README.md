@@ -1,0 +1,4 @@
+# JobSearch
+---
+
+For all you Cohort 5 TIY Grads, this app will (eventually) make applying for jobs and keeping your drive alive for proper career support top of mind! For now, you can simply clone this repo and run `npm install` and `npm start` to pull up a list of careers in the local area (Tampa Bay + 40mi radius) that match your current search criteria. Default is `javascript`. I am working on adding a drop down to select your language of choice and current city, as well as a database so you can track which/how many jobs you have already applied to. Also working on integrating with Trello and/or Slack to see if I can get it to automatically create a post for you on your job board. In the meantime, feel free to clone/fork the repo and make changes to the code to meet your specific needs until I make it more user friendly (this is a WAAAYYYYY rough draft)
