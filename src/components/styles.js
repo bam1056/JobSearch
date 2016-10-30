@@ -50,7 +50,9 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     width: '100%',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    border: '1px solid black',
+    padding: '10px 0'
   }
 }
 export default styles
