@@ -58,14 +58,23 @@ class App extends Component {
         padding: '10px',
         border: '2px solid black',
         listStyle: 'none'
+      },
+      cardButton: {
+        backgroundColor: 'blue',
+        color: 'white',
+        fontWeight: 'bold',
+        padding: '4px',
+        borderRadius: '5px'
       }
     }
     const jobList = jobs.map((job, i) => {
+      const subject = 'I Want This Job!!!'
+      const body = `Hey Toni! I would really like some help getting this one! Link to my job: ${job.detailUrl}`
       return <ul key={i} style={styles.list}>
         <li>{job.company}</li>
         <li>{job.jobTitle}</li>
         <li>{job.location}</li>
-        <li><a style={styles.apply} href={job.detailUrl} target='_blank'>Apply</a><a style={styles.apply} href={`mailto:antoinette.warren@gmail.com?subject=I%20Want%20This%20Job&body=Link%20To%20My%20Job%20${job.detailUrl}`}>Email Toni</a><button onClick={() => this.makeTrelloCard(job)}>Post To Trello</button></li>
+        <li><a style={styles.apply} href={job.detailUrl} target='_blank'>Apply</a><a style={styles.apply} href={`mailto:antoinette.warren@gmail.com?subject=${subject}&body=${body}`}>Email Toni</a><button style={styles.cardButton} onClick={() => this.makeTrelloCard(job)}>Post To Trello</button></li>
       </ul>
     })
     return <div>
