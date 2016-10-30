@@ -1,13 +1,13 @@
 const styles = {
   apply: {
-    textDecoration: 'none',
-    backgroundColor: 'blue',
-    color: 'white',
-    border: '1px solid black',
-    borderRadius: '5px',
-    padding: '2px',
-    marginRight: '5px',
-    fontWeight: 'bold'
+    // textDecoration: 'none',
+    // backgroundColor: 'blue',
+    // color: 'white',
+    // border: '1px solid black',
+    // borderRadius: '5px',
+    // padding: '2px',
+    // marginRight: '5px',
+    // fontWeight: 'bold'
   },
   listDiv: {
     display: 'flex',
@@ -25,12 +25,12 @@ const styles = {
     listStyle: 'none'
   },
   cardButton: {
-    backgroundColor: 'blue',
-    color: 'white',
-    fontWeight: 'bold',
-    padding: '2px',
-    borderRadius: '5px',
-    fontSize: '1em'
+    // backgroundColor: 'blue',
+    // color: 'white',
+    // fontWeight: 'bold',
+    // padding: '2px',
+    // borderRadius: '5px',
+    // fontSize: '1em'
   },
   authTrelloButton: {
     margin: '0 auto',

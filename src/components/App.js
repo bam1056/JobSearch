@@ -88,6 +88,7 @@ class App extends Component {
             <option value='Saint Petersburg, FL'>St.Pete</option>
             <option value='Tampa, FL'>Tampa</option>
             <option value='Clearwater, FL'>Clearwater</option>
+            <option value='Orlando, FL'>Orlando</option>
             <option value='New York, NY'>New York</option>
           </select>
         </div>
