@@ -28,8 +28,9 @@ const styles = {
     backgroundColor: 'blue',
     color: 'white',
     fontWeight: 'bold',
-    padding: '4px',
-    borderRadius: '5px'
+    padding: '2px',
+    borderRadius: '5px',
+    fontSize: '1em'
   },
   authTrelloButton: {
     margin: '0 auto',
