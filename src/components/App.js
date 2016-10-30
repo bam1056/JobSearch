@@ -17,7 +17,7 @@ class App extends Component {
     .then(json => this.setState({jobs: json.resultItemList}))
   }
 
-  Authorize = () => {
+  authorize = () => {
     console.log('clicked')
     Trello.authorize({
       interactive: true,
@@ -75,7 +75,7 @@ class App extends Component {
       <div style={{display: 'flex', alignItems: 'center', width: '100%'}}>
         <button
           style={styles.authTrelloButton}
-          onClick={this.Authorize}>
+          onClick={this.authorize}>
           Authorize Trello
         </button>
       </div>
