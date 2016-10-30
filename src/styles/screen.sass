@@ -11,3 +11,28 @@ body
   margin: 0
   font: $base-text-size / 1 $base-font-family
   background-color: lightblue
+
+ul a, button
+  background-color: blue
+  border: 1px solid black
+  border-radius: 5px
+  color: white
+  margin-right: 5px
+  padding: 2px
+  font-weight: bold
+  text-decoration: none
+
+ul a
+    transition: background-color 1.3s linear
+
+ul a:visited
+  background-color: grayscale
+
+ul a:hover
+  background-color: lighten(blue, 40%)
+
+ul button
+  background-color: darken(blue, 15%)
+  font:
+    size: 14px
+    weight: bold
