@@ -5,10 +5,10 @@ For all you Cohort 5 TIY Grads, this app should make applying for jobs and keepi
 
 ```
     <script
-      src="https://trello.com/1/client.js?key=YOUR_KEY_HERE>
+      src="https://trello.com/1/client.js?key=YOUR_KEY_HERE
    </script>
    
-   Trello.post('cards', { name: `${job.company}`, desc: job.jobTitle, idList: YOUR_DOING_LIST_ID_HERE, urlSource: thisUrl })
+   Trello.post('cards', { name: job.company, desc: job.jobTitle, idList: YOUR_DOING_LIST_ID_HERE, urlSource: thisUrl })
  ```
  you will be all set to start adding items to your Trello board and letting the campus director know of your interest!
  Reach out to me on Slack if you have any questions!
