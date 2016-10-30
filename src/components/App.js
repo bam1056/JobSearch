@@ -15,6 +15,22 @@ class App extends Component {
     .then(json => this.setState({jobs: json.resultItemList}))
   }
 
+  Authorize = () => {
+    console.log('clicked')
+    Trello.authorize({
+      interactive: true,
+      type: 'popup',
+      expiration: 'never',
+      name: 'surveyrequest',
+      persist: 'true',
+      scope: {read: true, write: true}
+    })
+  }
+
+  makeTrelloCard = (job) => {
+    var thisUrl = encodeURI(job.detailUrl)
+    Trello.post('cards', { name: `${job.company}`, desc: job.jobTitle, idList: '57c09a003c39978d6aaf12e8', urlSource: thisUrl })
+  }
   render () {
     const { jobs } = this.state
     const styles = {
@@ -49,11 +65,12 @@ class App extends Component {
         <li>{job.company}</li>
         <li>{job.jobTitle}</li>
         <li>{job.location}</li>
-        <li><a style={styles.apply} href={job.detailUrl} target='_blank'>Apply</a><a style={styles.apply} href={`mailto:antoinette.warren@gmail.com?subject=New%20Job&body=${job.detailUrl}`}>Email Toni</a></li>
+        <li><a style={styles.apply} href={job.detailUrl} target='_blank'>Apply</a><a style={styles.apply} href={`mailto:antoinette.warren@gmail.com?subject=New%20Job&body=${job.detailUrl}`}>Email Toni</a><button onClick={() => this.makeTrelloCard(job)}>Post To Trello</button></li>
       </ul>
     })
     return <div>
       <h1 style={{textAlign: 'center'}}>JOBS</h1> <hr />
+      <button onClick={this.Authorize}>Authorize Trello</button>
       <div style={styles.listDiv}>{jobList}</div>
     </div>
   }
