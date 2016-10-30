@@ -42,7 +42,7 @@ const styles = {
   dropdown: {
     display: 'flex',
     justifyContent: 'space-between',
-    width: '250px',
+    width: '230px',
     margin: '10px 0'
   },
   select: {

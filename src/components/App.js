@@ -102,8 +102,8 @@ class App extends Component {
         </div>
         <button
           onClick={this.getJobs}
-          style={styles.cardButton}>
-          GET JOBS
+          style={styles.authTrelloButton}>
+          Get Jobs
         </button>
       </div>
       <div
