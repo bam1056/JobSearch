@@ -7,12 +7,16 @@ class App extends Component {
     super()
     this.state = {
       jobs: [],
-      currentCardId: ''
+      currentCardId: '',
+      currentCity: '',
+      currentKeyWord: ''
     }
   }
 
-  componentWillMount () {
-    window.fetch('http://service.dice.com/api/rest/jobsearch/v1/simple.json?text=javascript&city=Tampa,+FL&pgcnt=150')
+  getJobs = () => {
+    const city = document.getElementById('city')
+    const text = document.getElementById('keyword')
+    window.fetch(`http://service.dice.com/api/rest/jobsearch/v1/simple.json?text=${text.value}&city=${city.value}&pgcnt=150`)
     .then(res => res.json())
     .then(json => this.setState({jobs: json.resultItemList}))
   }
@@ -72,11 +76,34 @@ class App extends Component {
     })
     return <div>
       <h1 style={{textAlign: 'center'}}>JOBS</h1> <hr />
-      <div style={{display: 'flex', alignItems: 'center', width: '100%'}}>
+      <div style={styles.select}>
         <button
           style={styles.authTrelloButton}
           onClick={this.authorize}>
           Authorize Trello
+        </button>
+        <div style={styles.dropdown}>
+          <label>City: </label>
+          <select id='city' name='city'>
+            <option value='Saint Petersburg, FL'>St.Pete</option>
+            <option value='Tampa, FL'>Tampa</option>
+            <option value='Clearwater, FL'>Clearwater</option>
+            <option value='New York, NY'>New York</option>
+          </select>
+        </div>
+        <div style={styles.dropdown}>
+          <label>Keywords: </label>
+          <select id='keyword' name='keyword'>
+            <option value='Javascript'>Javascript</option>
+            <option value='Ruby'>Ruby</option>
+            <option value='FrontEnd'>FrontEnd</option>
+            <option value='Junior'>Junior</option>
+          </select>
+        </div>
+        <button
+          onClick={this.getJobs}
+          style={styles.cardButton}>
+          GET JOBS
         </button>
       </div>
       <div

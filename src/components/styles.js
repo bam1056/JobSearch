@@ -36,7 +36,20 @@ const styles = {
     backgroundColor: 'blue',
     color: 'white',
     fontWeight: 'bold',
-    fontSize: '2em'
+    fontSize: '2em',
+    width: '250px'
+  },
+  dropdown: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    width: '250px',
+    margin: '10px 0'
+  },
+  select: {
+    display: 'flex',
+    alignItems: 'center',
+    width: '100%',
+    flexDirection: 'column'
   }
 }
 export default styles
