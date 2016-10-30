@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../styles/screen.sass'
+import styles from './styles'
 
 class App extends Component {
   constructor () {
@@ -41,40 +42,7 @@ class App extends Component {
 
   render () {
     const { jobs } = this.state
-    const styles = {
-      apply: {
-        textDecoration: 'none',
-        backgroundColor: 'blue',
-        color: 'white',
-        border: '1px solid black',
-        borderRadius: '5px',
-        padding: '2px',
-        marginRight: '5px',
-        fontWeight: 'bold'
-      },
-      listDiv: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        alignItems: 'center'
-      },
-      list: {
-        display: 'flex',
-        flexDirection: 'column',
-        width: '300px',
-        margin: '15px',
-        padding: '10px',
-        border: '2px solid black',
-        listStyle: 'none'
-      },
-      cardButton: {
-        backgroundColor: 'blue',
-        color: 'white',
-        fontWeight: 'bold',
-        padding: '4px',
-        borderRadius: '5px'
-      }
-    }
+
     const jobList = jobs.map((job, i) => {
       const subject = 'I Want This Job!!!'
       const body = `Hey Toni! I would really like some help getting this one! Link to my job: ${job.detailUrl}`
@@ -82,13 +50,39 @@ class App extends Component {
         <li>{job.company}</li>
         <li>{job.jobTitle}</li>
         <li>{job.location}</li>
-        <li><a style={styles.apply} href={job.detailUrl} target='_blank'>Apply</a><a style={styles.apply} href={`mailto:antoinette.warren@gmail.com?subject=${subject}&body=${body}`}>Email Toni</a><button style={styles.cardButton} onClick={() => this.makeTrelloCard(job)}>Post To Trello</button></li>
+        <li>
+          <a
+            style={styles.apply}
+            href={job.detailUrl}
+            target='_blank'>
+            Apply
+          </a>
+          <a
+            style={styles.apply}
+            href={`mailto:antoinette.warren@gmail.com?subject=${subject}&body=${body}`}>
+            Email Toni
+          </a>
+          <button
+            style={styles.cardButton}
+            onClick={() => this.makeTrelloCard(job)}>
+            Post To Trello
+          </button>
+        </li>
       </ul>
     })
     return <div>
       <h1 style={{textAlign: 'center'}}>JOBS</h1> <hr />
-      <div style={{display: 'flex', alignItems: 'center', width: '100%'}}><button style={{margin: '0 auto', backgroundColor: 'blue', color: 'white', fontWeight: 'bold', fontSize: '2em'}} onClick={this.Authorize}>Authorize Trello</button></div>
-      <div style={styles.listDiv}>{jobList}</div>
+      <div style={{display: 'flex', alignItems: 'center', width: '100%'}}>
+        <button
+          style={styles.authTrelloButton}
+          onClick={this.Authorize}>
+          Authorize Trello
+        </button>
+      </div>
+      <div
+        style={styles.listDiv}>
+        {jobList}
+      </div>
     </div>
   }
 }
