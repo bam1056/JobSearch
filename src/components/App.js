@@ -70,7 +70,7 @@ class App extends Component {
     })
     return <div>
       <h1 style={{textAlign: 'center'}}>JOBS</h1> <hr />
-      <button onClick={this.Authorize}>Authorize Trello</button>
+      <button style={{margin: '0 auto', backgroundColor: 'blue', color: 'white', fontWeight: 'bold'}} onClick={this.Authorize}>Authorize Trello</button>
       <div style={styles.listDiv}>{jobList}</div>
     </div>
   }
