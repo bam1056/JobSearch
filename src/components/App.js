@@ -5,7 +5,8 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      jobs: []
+      jobs: [],
+      currentCardId: ''
     }
   }
 
@@ -29,8 +30,15 @@ class App extends Component {
 
   makeTrelloCard = (job) => {
     var thisUrl = encodeURI(job.detailUrl)
+    let cardId = ''
+    const comment = '@toniwarren: Please reach out to me about this position!'
     Trello.post('cards', { name: `${job.company}`, desc: job.jobTitle, idList: '57c09a003c39978d6aaf12e8', urlSource: thisUrl })
+    .then(res => this.setState({currentCardId: res.id}, () => {
+      cardId = this.state.currentCardId
+      Trello.post(`cards/${cardId}/actions/comments`, {text: comment})
+    }))
   }
+
   render () {
     const { jobs } = this.state
     const styles = {
@@ -79,7 +87,7 @@ class App extends Component {
     })
     return <div>
       <h1 style={{textAlign: 'center'}}>JOBS</h1> <hr />
-      <button style={{margin: '0 auto', backgroundColor: 'blue', color: 'white', fontWeight: 'bold'}} onClick={this.Authorize}>Authorize Trello</button>
+      <div style={{display: 'flex', alignItems: 'center', width: '100%'}}><button style={{margin: '0 auto', backgroundColor: 'blue', color: 'white', fontWeight: 'bold', fontSize: '2em'}} onClick={this.Authorize}>Authorize Trello</button></div>
       <div style={styles.listDiv}>{jobList}</div>
     </div>
   }
