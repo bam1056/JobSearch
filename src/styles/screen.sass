@@ -2,6 +2,8 @@
 
 $base-text-size: 16px
 $base-font-family: sans-serif
+$body-font: 'Open Sans', sans-serif
+$important-font: 'Roboto', sans-serif
 
 html
   text-size-adjust: 100%
@@ -12,14 +14,29 @@ body
   font: $base-text-size / 1 $base-font-family
   background-color: lightblue
 
+.CardContainer
+  background-color: #E2E4E6
+  border-radius: 10px
+  margin: 10px
+  z-index: 1
+
+button, label
+  font-family: 'Roboto', sans-serif
+
+ul
+  background-color: white
+  border-radius: 15px
+  font-family: $body-font
+  z-index: 20
+
 ul a, button
   background-color: blue
   border: 1px solid black
   border-radius: 5px
   color: white
+  font-family: $body-font
   margin-right: 5px
   padding: 2px
-  font-weight: bold
   text-decoration: none
 
 ul a
@@ -32,7 +49,8 @@ ul a:hover
   background-color: lighten(blue, 40%)
 
 ul button
-  background-color: darken(blue, 15%)
+  background-color: darken(blue, 20%)
+  color: #D29034
   font:
-    size: 14px
+    size: 17px
     weight: bold

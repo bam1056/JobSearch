@@ -21,7 +21,7 @@ const styles = {
     width: '300px',
     margin: '15px',
     padding: '10px',
-    border: '2px solid black',
+    border: '',
     listStyle: 'none'
   },
   cardButton: {
