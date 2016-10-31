@@ -16,13 +16,13 @@ const styles = {
     alignItems: 'center'
   },
   list: {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '300px',
-    margin: '15px',
-    padding: '10px',
-    border: '',
-    listStyle: 'none'
+    // display: '',
+    // flexDirection: '',
+    // width: '300px',
+    // margin: '15px',
+    // padding: '10px',
+    // border: '',
+    // listStyle: 'none'
   },
   cardButton: {
     // backgroundColor: 'blue',
