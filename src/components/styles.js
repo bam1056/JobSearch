@@ -33,12 +33,12 @@ const styles = {
     // fontSize: '1em'
   },
   authTrelloButton: {
-    margin: '0 auto',
-    backgroundColor: 'blue',
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: '2em',
-    width: '250px'
+    // margin: '0 auto',
+    // backgroundColor: 'blue',
+    // color: 'white',
+    // fontWeight: 'bold',
+    // fontSize: '2em',
+    // width: '250px'
   },
   dropdown: {
     display: 'flex',

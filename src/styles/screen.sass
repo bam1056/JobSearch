@@ -1,9 +1,16 @@
 @import 'utility'
 
+//***** Fonts *****
 $base-text-size: 16px
 $base-font-family: sans-serif
 $body-font: 'Open Sans', sans-serif
 $important-font: 'Roboto', sans-serif
+
+
+// ***** Colors *****
+
+$body-color: #333333
+$trello-color: #D29034
 
 html
   text-size-adjust: 100%
@@ -12,7 +19,7 @@ body
   @include font-smoothing(on)
   margin: 0
   font: $base-text-size / 1 $base-font-family
-  background-color: lightblue
+  background-color: #333333
 
 .CardContainer
   background-color: #E2E4E6
@@ -24,6 +31,16 @@ body
 
 button, label
   font-family: 'Roboto', sans-serif
+
+.trello
+  background-color: $trello-color
+
+.trello, .jobs
+  font:
+    size: 25px
+    weight: bold
+  width: 250px
+
 
 ul
   background-color: white
@@ -55,7 +72,14 @@ ul a:hover
 
 ul button
   background-color: darken(blue, 20%)
-  color: #D29034
+  color: $trello-color
   font:
     size: 17px
     weight: bold
+
+select
+  border-width: .2em
+  font:
+    family: $body-font
+    weight: bold
+    size: .8em

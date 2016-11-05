@@ -79,7 +79,7 @@ class App extends Component {
     return <div>
       <h1 style={{textAlign: 'center'}}>JOBS</h1> <hr />
       <div style={styles.select}>
-        <button
+        <button className='trello'
           style={styles.authTrelloButton}
           onClick={this.authorize}>
           Authorize Trello
@@ -103,7 +103,7 @@ class App extends Component {
             <option value='Junior'>Junior</option>
           </select>
         </div>
-        <button
+        <button className='jobs'
           onClick={this.getJobs}
           style={styles.authTrelloButton}>
           Get Jobs
