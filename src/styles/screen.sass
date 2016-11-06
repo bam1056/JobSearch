@@ -1,7 +1,16 @@
 @import 'utility'
 
+//***** Fonts *****
 $base-text-size: 16px
 $base-font-family: sans-serif
+$body-font: 'Open Sans', sans-serif
+$important-font: 'Roboto', sans-serif
+
+
+// ***** Colors *****
+
+$body-color: #333333
+$trello-color: #D29034
 
 html
   text-size-adjust: 100%
@@ -10,16 +19,61 @@ body
   @include font-smoothing(on)
   margin: 0
   font: $base-text-size / 1 $base-font-family
-  background-color: lightblue
+  background-color: #333333
+
+h1
+  color: white
+
+.CardContainer
+  background-color: #E2E4E6
+  border-radius: 4px
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3)
+  display: flex
+  flex-direction: column
+  margin: 10px
+  z-index: 1
+
+button, label
+  font-family: 'Roboto', sans-serif
+
+.trello
+  background-color: $trello-color
+
+.jobs
+  background-color: lighten(blue, 28%)
+  color: lighten($body-color, 12%)
+
+.trello, .jobs
+  font:
+    size: 25px
+    weight: bold
+  width: 250px
+
+.Button
+  background-color: lighten($body-color, 28%)
+
+.cards
+  background-color: $trello-color
+
+
+ul
+  background-color: white
+  border-radius: 10px
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2)
+  font-family: $body-font
+  list-style: none
+  margin: 13px
+  width: 275px
+  z-index: 20
 
 ul a, button
-  background-color: blue
+  background-color: lighten($body-color, 10%)
   border: 1px solid black
   border-radius: 5px
   color: white
+  font-family: $body-font
   margin-right: 5px
   padding: 2px
-  font-weight: bold
   text-decoration: none
 
 ul a
@@ -32,7 +86,15 @@ ul a:hover
   background-color: lighten(blue, 40%)
 
 ul button
-  background-color: darken(blue, 15%)
+  background-color: lighten($trello-color, 18%)
+  color: lighten(black, 30%)
   font:
-    size: 14px
+    size: 17px
     weight: bold
+
+select
+  border-width: .2em
+  font:
+    family: $body-font
+    weight: bold
+    size: .8em

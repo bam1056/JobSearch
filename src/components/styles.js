@@ -16,13 +16,13 @@ const styles = {
     alignItems: 'center'
   },
   list: {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '300px',
-    margin: '15px',
-    padding: '10px',
-    border: '2px solid black',
-    listStyle: 'none'
+    // display: '',
+    // flexDirection: '',
+    // width: '300px',
+    // margin: '15px',
+    // padding: '10px',
+    // border: '',
+    // listStyle: 'none'
   },
   cardButton: {
     // backgroundColor: 'blue',
@@ -33,12 +33,12 @@ const styles = {
     // fontSize: '1em'
   },
   authTrelloButton: {
-    margin: '0 auto',
-    backgroundColor: 'blue',
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: '2em',
-    width: '250px'
+    // margin: '0 auto',
+    // backgroundColor: 'blue',
+    // color: 'white',
+    // fontWeight: 'bold',
+    // fontSize: '2em',
+    // width: '250px'
   },
   dropdown: {
     display: 'flex',

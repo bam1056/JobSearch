@@ -50,34 +50,36 @@ class App extends Component {
     const jobList = jobs.map((job, i) => {
       const subject = 'I Want This Job!!!'
       const body = `Hey Toni! I would really like some help getting this one! Link to my job: ${job.detailUrl}`
-      return <ul key={i} style={styles.list}>
-        <li>{job.company}</li>
-        <li>{job.jobTitle}</li>
-        <li>{job.location}</li>
-        <li>
-          <a
-            style={styles.apply}
-            href={job.detailUrl}
-            target='_blank'>
-            Apply
-          </a>
-          <a
-            style={styles.apply}
-            href={`mailto:antoinette.warren@gmail.com?subject=${subject}&body=${body}`}>
-            Email Toni
-          </a>
-          <button
-            style={styles.cardButton}
-            onClick={() => this.makeTrelloCard(job)}>
-            Post To Trello
-          </button>
-        </li>
-      </ul>
+      return <div className='CardContainer'>
+        <ul key={i} style={styles.list}>
+          <li>{job.company}</li>
+          <li>{job.jobTitle}</li>
+          <li>{job.location}</li>
+          <li>
+            <a
+              style={styles.apply}
+              href={job.detailUrl}
+              target='_blank'>
+              Apply
+            </a>
+            <a
+              style={styles.apply}
+              href={`mailto:antoinette.warren@gmail.com?subject=${subject}&body=${body}`}>
+              Email Toni
+            </a>
+            <button
+              style={styles.cardButton}
+              onClick={() => this.makeTrelloCard(job)}>
+              Post To Trello
+            </button>
+          </li>
+        </ul>
+      </div>
     })
     return <div>
       <h1 style={{textAlign: 'center'}}>JOBS</h1> <hr />
-      <div style={styles.select}>
-        <button
+      <div className='Button Container' style={styles.select}>
+        <button className='trello'
           style={styles.authTrelloButton}
           onClick={this.authorize}>
           Authorize Trello
@@ -101,13 +103,13 @@ class App extends Component {
             <option value='Junior'>Junior</option>
           </select>
         </div>
-        <button
+        <button className='jobs'
           onClick={this.getJobs}
           style={styles.authTrelloButton}>
           Get Jobs
         </button>
       </div>
-      <div
+      <div className="cards"
         style={styles.listDiv}>
         {jobList}
       </div>
