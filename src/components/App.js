@@ -46,12 +46,11 @@ class App extends Component {
 
   render () {
     const { jobs } = this.state
-
     const jobList = jobs.map((job, i) => {
       const subject = 'I Want This Job!!!'
       const body = `Hey Toni! I would really like some help getting this one! Link to my job: ${job.detailUrl}`
-      return <div className='CardContainer'>
-        <ul key={i} style={styles.list}>
+      return <div className='CardContainer' key={i}>
+        <ul style={styles.list}>
           <li>{job.company}</li>
           <li>{job.jobTitle}</li>
           <li>{job.location}</li>
@@ -77,15 +76,9 @@ class App extends Component {
       </div>
     })
     return <div>
-<<<<<<< HEAD
-      <h1 style={{textAlign: 'center'}}>JOBS</h1>
-      <div style={styles.select}>
-        <button
-=======
       <h1 style={{textAlign: 'center'}}>JOBS</h1> <hr />
       <div className='Button Container' style={styles.select}>
         <button className='trello'
->>>>>>> dc16deb39df0d89e77b5314316cf9eca8945f818
           style={styles.authTrelloButton}
           onClick={this.authorize}>
           Authorize Trello
