@@ -35,12 +35,12 @@ class App extends Component {
 
   makeTrelloCard = (job) => {
     var thisUrl = encodeURI(job.detailUrl)
-    let cardId = ''
-    const comment = '@toniwarren: Please reach out to me about this position!'
+    // let cardId = ''
+    // const comment = '@toniwarren: Please reach out to me about this position!'
     Trello.post('cards', { name: `${job.company}`, desc: job.jobTitle, idList: '57c09a003c39978d6aaf12e8', urlSource: thisUrl })
     .then(res => this.setState({currentCardId: res.id}, () => {
-      cardId = this.state.currentCardId
-      Trello.post(`cards/${cardId}/actions/comments`, {text: comment})
+      // cardId = this.state.currentCardId
+      // Trello.post(`cards/${cardId}/actions/comments`, {text: comment})
     }))
   }
 
@@ -75,7 +75,7 @@ class App extends Component {
       </ul>
     })
     return <div>
-      <h1 style={{textAlign: 'center'}}>JOBS</h1> <hr />
+      <h1 style={{textAlign: 'center'}}>JOBS</h1>
       <div style={styles.select}>
         <button
           style={styles.authTrelloButton}
