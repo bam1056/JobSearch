@@ -21,9 +21,13 @@ body
   font: $base-text-size / 1 $base-font-family
   background-color: #333333
 
+h1
+  color: white
+
 .CardContainer
   background-color: #E2E4E6
   border-radius: 4px
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3)
   display: flex
   flex-direction: column
   margin: 10px
@@ -35,16 +39,27 @@ button, label
 .trello
   background-color: $trello-color
 
+.jobs
+  background-color: lighten(blue, 28%)
+  color: lighten($body-color, 12%)
+
 .trello, .jobs
   font:
     size: 25px
     weight: bold
   width: 250px
 
+.Button
+  background-color: lighten($body-color, 28%)
+
+.cards
+  background-color: $trello-color
+
 
 ul
   background-color: white
   border-radius: 10px
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2)
   font-family: $body-font
   list-style: none
   margin: 13px
@@ -52,7 +67,7 @@ ul
   z-index: 20
 
 ul a, button
-  background-color: blue
+  background-color: lighten($body-color, 10%)
   border: 1px solid black
   border-radius: 5px
   color: white
@@ -71,8 +86,8 @@ ul a:hover
   background-color: lighten(blue, 40%)
 
 ul button
-  background-color: darken(blue, 20%)
-  color: $trello-color
+  background-color: lighten($trello-color, 18%)
+  color: lighten(black, 30%)
   font:
     size: 17px
     weight: bold

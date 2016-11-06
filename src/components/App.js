@@ -78,7 +78,7 @@ class App extends Component {
     })
     return <div>
       <h1 style={{textAlign: 'center'}}>JOBS</h1> <hr />
-      <div style={styles.select}>
+      <div className='Button Container' style={styles.select}>
         <button className='trello'
           style={styles.authTrelloButton}
           onClick={this.authorize}>
@@ -109,7 +109,7 @@ class App extends Component {
           Get Jobs
         </button>
       </div>
-      <div
+      <div className="cards"
         style={styles.listDiv}>
         {jobList}
       </div>
